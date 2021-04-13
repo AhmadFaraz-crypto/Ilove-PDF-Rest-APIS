@@ -9,9 +9,9 @@
 
 <dl>
   <dt>PDF to JPG</dt>
-  <dd>Convert each PDF page into a JPG or extract all images contained in a PDF.</dd>
+  <dd>Convert each PDF page into a JPG.</dd>
   <dt>JPG to PDF</dt>
-  <dd>Convert images to PDF in seconds. Easily adjust orientation and margins.</dd>
+  <dd>Convert image to PDF in seconds.</dd>
   <dt>HTML to PDF</dt>
   <dd>Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.</dd>
 </dl>

@@ -11,7 +11,7 @@ import showNotification from 'utils/toast';
 // redux
 import types from './types';
 
-function verifyAPI() {
+function pdfjpgAPI() {
   const URL = `${config.baseURL}/start/pdfjpg`;
   const options = {
     headers: {
@@ -20,20 +20,81 @@ function verifyAPI() {
     },
     method: 'GET',
   };
+  return XHR(URL, options);
+}
 
-  console.log(localStorage.getItem('token'));
+function imagepdfAPI() {
+  const URL = `${config.baseURL}/start/imagepdf`;
+  const options = {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    method: 'GET',
+  };
 
   return XHR(URL, options);
 }
 
-function* verify() {
+function htmlpdfAPI() {
+  const URL = `${config.baseURL}/start/htmlpdf`;
+  const options = {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    method: 'GET',
+  };
+
+  return XHR(URL, options);
+}
+
+function* pdftojpgVerify() {
   try {
-    const res = yield call(verifyAPI);
+    const res = yield call(pdfjpgAPI);
 
     if (res) {
       yield put(
         push({
-          pathname: '/pdf-to-jpg',
+          pathname: '/upload-file',
+        }),
+      );
+      localStorage.setItem('server', res.data.server);
+      localStorage.setItem('task', res.data.task);
+    }
+  } catch (e) {
+    const { response } = e;
+    response && showNotification(response.data.message, 'error');
+  }
+}
+
+function* imagepdfAPIVerify() {
+  try {
+    const res = yield call(imagepdfAPI);
+
+    if (res) {
+      yield put(
+        push({
+          pathname: '/upload-file',
+        }),
+      );
+      localStorage.setItem('server', res.data.server);
+      localStorage.setItem('task', res.data.task);
+    }
+  } catch (e) {
+    const { response } = e;
+    response && showNotification(response.data.message, 'error');
+  }
+}
+
+function* htmlpdfAPIVerify() {
+  try {
+    const res = yield call(htmlpdfAPI);
+
+    if (res) {
+      yield put(
+        push({
+          pathname: '/upload-file',
         }),
       );
       localStorage.setItem('server', res.data.server);
@@ -46,5 +107,7 @@ function* verify() {
 }
 
 export default function* watcher() {
-  yield takeLatest(types.verify, verify);
+  yield takeLatest(types.pdftojpg, pdftojpgVerify);
+  yield takeLatest(types.imagetopdf, imagepdfAPIVerify);
+  yield takeLatest(types.htmltopdf, htmlpdfAPIVerify);
 }

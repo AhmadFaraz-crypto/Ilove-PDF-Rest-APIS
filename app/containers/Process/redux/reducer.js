@@ -12,9 +12,5 @@ export default (state = initialState, action) =>
       case types.process:
         draft.requesting = true;
         break;
-
-      case types.reset:
-        draft.requesting = false;
-        break;
     }
   });

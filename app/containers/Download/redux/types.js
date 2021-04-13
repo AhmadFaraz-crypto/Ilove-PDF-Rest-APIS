@@ -1,3 +1,3 @@
 export default {
-  download: 'convert-image-pdf/download/download',
+  download: 'i-love-pdf-apis/download/download',
 };

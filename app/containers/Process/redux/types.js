@@ -1,3 +1,3 @@
 export default {
-  process: 'convert-image-pdf/process/process',
+  process: 'i-love-pdf-apis/process/process',
 };

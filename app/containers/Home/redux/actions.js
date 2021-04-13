@@ -1,5 +1,18 @@
 import types from './types';
 
-export const verify = () => ({
-  type: types.verify,
+export const pdftojpg = () => ({
+  type: types.pdftojpg,
+});
+
+export const imagetopdf = () => ({
+  type: types.imagetopdf,
+});
+
+export const htmltopdf = () => ({
+  type: types.htmltopdf,
+});
+
+export const updateFunctionType = (funType) => ({
+  type: types.updateFunctionType,
+  funType
 });

@@ -30,7 +30,7 @@ const schema = yup.object().shape({
   public_key: yup.string().required('This is Required'),
 });
 
-function Auth({ history, onSubmitForm, requesting }) {
+function Auth({ onSubmitForm, requesting }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
@@ -55,9 +55,16 @@ function Auth({ history, onSubmitForm, requesting }) {
         <form onSubmit={handleSubmit(handleOnSubmit)}>
           <div className="d-flex align-items-center justify-content-center">
             <Input {...register('public_key')} />
-            <Button text="Submit" className="ml-3" variant="primary" />
+            <Button
+              text="Submit"
+              className="ml-3"
+              variant="primary"
+              loading={requesting}
+            />
           </div>
-          {errors.public_key && <p className="errors">{errors.public_key.message}</p>}
+          {errors.public_key && (
+            <p className="errors">{errors.public_key.message}</p>
+          )}
         </form>
         <div>
           <p className="mt-3 label-text">

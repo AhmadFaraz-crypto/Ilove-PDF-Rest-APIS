@@ -1,12 +1,12 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const selectHome = state => state.verify || initialState;
+const selectHome = state => state.home || initialState;
 
-const makeSelectRequesting = () =>
+const makeSelectfuncRequesting = () =>
   createSelector(
     selectHome,
-    state => state.requesting,
+    state => state.funtionType,
   );
 
-export { makeSelectRequesting };
+export { makeSelectfuncRequesting };

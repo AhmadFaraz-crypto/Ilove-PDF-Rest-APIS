@@ -1,3 +1,3 @@
 export default {
-  auth: 'convert-image-pdf/auth/auth',
+  auth: 'i-love-pdf-apis/auth/auth',
 };

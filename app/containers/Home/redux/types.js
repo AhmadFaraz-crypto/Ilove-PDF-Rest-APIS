@@ -1,3 +1,6 @@
 export default {
-  verify: 'convert-image-pdf/verify/verify',
+  pdftojpg: 'i-love-pdf-apis/pdftojpg/pdftojpg',
+  imagetopdf: 'i-love-pdf-apis/imagetopdf/imagetopdf',
+  htmltopdf: 'i-love-pdf-apis/htmltopdf/htmltopdf',
+  updateFunctionType: 'i-love-pdf-apis/updateFunctionType',
 };

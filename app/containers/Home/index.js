@@ -5,33 +5,44 @@ import { createStructuredSelector } from 'reselect';
 
 // components
 import { Row, Col } from 'react-bootstrap';
-import { useInjectReducer } from 'utils/injectReducer';
-import { useInjectSaga } from 'utils/injectSaga';
 import Card from '../../components/Card';
 
 // redux
 import saga from './redux/saga';
 import reducer from './redux/reducer';
-import { verify } from './redux/actions';
+import { pdftojpg, imagetopdf, htmltopdf, updateFunctionType } from './redux/actions';
 
 // utils
+import { useInjectReducer } from 'utils/injectReducer';
+import { useInjectSaga } from 'utils/injectSaga';
 
 // selectors
-import { makeSelectRequesting } from './redux/selectors';
+import { makeSelectfuncRequesting } from './redux/selectors';
 
 // styles
 import Container from './style';
 
 // constants
-const key = 'verify';
+const key = 'home';
 
-function Home({ onSubmitForm }) {
+function Home({ onPdftoJpg, onImagetoPDF, onHtmltoPDF, FunctionType}) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
-  const handle = () => {
-    onSubmitForm();
-  };
+  const handleImagetoPdf = (type) => {
+    onImagetoPDF();
+    FunctionType(type);
+  }
+
+  const handlePdftoJpg = (type) => {
+    onPdftoJpg();
+    FunctionType(type);
+  }
+
+  const handleHtmltoPdf = (type) => {
+    onHtmltoPDF();
+    FunctionType(type);
+  }
 
   return (
     <Container>
@@ -48,7 +59,7 @@ function Home({ onSubmitForm }) {
           <Row>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5" onClick={() => handle()}>
+                <div className="p-5" onClick={() => handleImagetoPdf("ImagetoPdf")}>
                   <h3 className="card-title">JPG to PDF</h3>
                   <p className="card-des">
                     Convert JPG images to PDF in seconds. Easily adjust
@@ -59,7 +70,7 @@ function Home({ onSubmitForm }) {
             </Col>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5">
+                <div className="p-5" onClick={() => handlePdftoJpg('PdftoJpg')}>
                   <h3 className="card-title">PDF to JPG</h3>
                   <p className="card-des">
                     Convert each PDF page into a JPG or extract all images
@@ -70,7 +81,7 @@ function Home({ onSubmitForm }) {
             </Col>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5">
+                <div className="p-5" onClick={() => handleHtmltoPdf('htmltoPdf')}>
                   <h3 className="card-title">HTML to PDF</h3>
                   <p className="card-des">
                     Convert webpages in HTML to PDF. Copy and paste the URL of
@@ -87,11 +98,14 @@ function Home({ onSubmitForm }) {
 }
 
 const mapStateToProps = createStructuredSelector({
-  requesting: makeSelectRequesting(),
+  requesting: makeSelectfuncRequesting(),
 });
 
 export const mapDispatchToProps = dispatch => ({
-  onSubmitForm: () => dispatch(verify()),
+  onPdftoJpg: () => dispatch(pdftojpg()),
+  onImagetoPDF: () => dispatch(imagetopdf()),
+  onHtmltoPDF: () => dispatch(htmltopdf()),
+  FunctionType: funType => dispatch(updateFunctionType(funType)),
 });
 
 const withConnect = connect(

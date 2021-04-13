@@ -24,7 +24,7 @@ import Container from './style';
 // constants
 const key = 'download';
 
-function Download({ onSubmitForm }) {
+function Download({ downloadFile, requesting }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
@@ -41,7 +41,8 @@ function Download({ onSubmitForm }) {
             text="Download"
             variant="primary"
             className="ml-auto mr-auto mt-3"
-            onClick={() => onSubmitForm()}
+            onClick={() => downloadFile()}
+            loading={requesting}
           />
         </div>
       </div>
@@ -54,7 +55,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  onSubmitForm: () => dispatch(download()),
+  downloadFile: () => dispatch(download()),
 });
 
 const withConnect = connect(

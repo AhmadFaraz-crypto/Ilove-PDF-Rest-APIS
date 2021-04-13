@@ -1,9 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 
-// constants
-import config from 'constants/config';
-
 // utils
 import XHR from 'utils/xhr';
 import showNotification from 'utils/toast';

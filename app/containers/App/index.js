@@ -11,7 +11,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Auth from 'containers/Auth/loadable';
 import Home from 'containers/Home/loadable';
-import PDFtoJPG from 'containers/PDFtoJPG/loadable';
+import UploadFile from 'containers/UploadFile/loadable';
 import Process from 'containers/Process/loadable';
 import Download from 'containers/Download/loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -24,7 +24,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Auth} />
         <Route path="/home" component={Home} />
-        <Route path="/pdf-to-jpg" component={PDFtoJPG} />
+        <Route path="/upload-file" component={UploadFile} />
         <Route path="/process" component={Process} />
         <Route path="/download" component={Download} />
         <Route path="" component={NotFoundPage} />

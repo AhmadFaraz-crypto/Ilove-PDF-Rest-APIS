@@ -55,9 +55,9 @@ function Auth({ history, onSubmitForm, requesting }) {
         <form onSubmit={handleSubmit(handleOnSubmit)}>
           <div className="d-flex align-items-center justify-content-center">
             <Input {...register('public_key')} />
-            {errors.public_key && <p>{errors.public_key.message}</p>}
             <Button text="Submit" className="ml-3" variant="primary" />
           </div>
+          {errors.public_key && <p className="errors">{errors.public_key.message}</p>}
         </form>
         <div>
           <p className="mt-3 label-text">

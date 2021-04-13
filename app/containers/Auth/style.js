@@ -15,6 +15,12 @@ const Wrapper = styled.div`
     color: #f3f0ec;
     text-align: center;
   }
+
+  .errors {
+    color: #bf1650;
+    margin-left: 25px;
+    margin-top: 10px;
+  }
 `;
 
 export default Wrapper;

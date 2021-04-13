@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -29,8 +29,6 @@ function Process({ onSubmitForm }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
-  const [fileName, setFileName] = useState('');
-
   const startProcess = () => {
     const data = {
       task: localStorage.getItem('task'),
@@ -38,7 +36,7 @@ function Process({ onSubmitForm }) {
       files: [
         {
           server_filename: localStorage.getItem('server_filename'),
-          filename: fileName,
+          filename: "Untitled File",
         },
       ],
     };
@@ -54,10 +52,6 @@ function Process({ onSubmitForm }) {
           PDF.
         </h3>
         <div className="pt-5">
-          <Input
-            placeholder="Plesae Enter File Name"
-            onChange={e => setFileName(e.target.value)}
-          />
           <Button
             text="Start Process"
             variant="primary"

@@ -67,12 +67,14 @@ function PDFtoJPG({ onSubmitForm }) {
           />
         </div>
         {imageUpload && (
-          <Button
+          <div className="mt-3">
+            <Button
             text="Convert"
             variant="primary"
             className="m-auto"
             onClick={() => handleOnSubmit()}
           />
+          </div>
         )}
       </div>
     </Container>

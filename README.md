@@ -15,3 +15,6 @@
   <dt>HTML to PDF</dt>
   <dd>Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.</dd>
 </dl>
+
+## Documentation
+Please see https://developer.ilovepdf.com/docs for up-to-date documentation.

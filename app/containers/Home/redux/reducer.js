@@ -25,5 +25,9 @@ export default (state = initialState, action) =>
       case types.updateFunctionType:
         draft.funtionType = action.funType;
         break;
+
+      case types.reset:
+        draft.requesting = false;
+        break;
     }
   });

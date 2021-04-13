@@ -10,6 +10,7 @@ import showNotification from 'utils/toast';
 
 // redux
 import types from './types';
+import { reset } from './actions';
 
 function loginAPI(data) {
   const URL = `${config.baseURL}/auth`;
@@ -39,6 +40,8 @@ function* auth({ data }) {
   } catch (e) {
     const { response } = e;
     response && showNotification(response.data.message, 'error');
+  } finally {
+    yield put(reset());
   }
 }
 

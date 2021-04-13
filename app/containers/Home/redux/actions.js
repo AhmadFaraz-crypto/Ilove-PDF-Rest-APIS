@@ -16,3 +16,7 @@ export const updateFunctionType = (funType) => ({
   type: types.updateFunctionType,
   funType
 });
+
+export const reset = () => ({
+  type: types.reset,
+});

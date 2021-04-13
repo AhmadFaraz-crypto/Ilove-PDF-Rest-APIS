@@ -36,7 +36,7 @@ function Process({ onSubmitForm, funcType, requesting }) {
       files: [
         {
           server_filename: localStorage.getItem('server_filename'),
-          filename: "Untitled File",
+          filename: 'Untitled File',
         },
       ],
     };
@@ -50,7 +50,7 @@ function Process({ onSubmitForm, funcType, requesting }) {
       files: [
         {
           server_filename: localStorage.getItem('server_filename'),
-          filename: "Untitled File",
+          filename: 'Untitled File',
         },
       ],
     };
@@ -64,7 +64,7 @@ function Process({ onSubmitForm, funcType, requesting }) {
       files: [
         {
           server_filename: localStorage.getItem('server_filename'),
-          filename: "Untitled File",
+          filename: 'Untitled File',
         },
       ],
     };
@@ -72,23 +72,29 @@ function Process({ onSubmitForm, funcType, requesting }) {
   };
 
   const startProcess = () => {
-    if (funcType === "PdftoJpg") {
+    if (funcType === 'PdftoJpg') {
       startProcessPdftoJpg();
-    } else if (funcType === "ImagetoPdf") {
+    } else if (funcType === 'ImagetoPdf') {
       startProcessImagetoPdf();
     } else {
       startProcesshtmltoPdf();
     }
-  }
+  };
 
   return (
     <Container>
       <div>
-        <h1 className="header">PDF to JPG</h1>
-        <h3 className="sub-header">
-          Convert each PDF page into a JPG or extract all images contained in a
-          PDF.
-        </h3>
+        {funcType === 'PdftoJpg' ? <h1 className="header">PDF to JPG</h1> : ''}
+        {funcType === 'ImagetoPdf' ? (
+          <h1 className="header">Image to PDF</h1>
+        ) : (
+          ''
+        )}
+        {funcType === 'htmltoPdf' ? (
+          <h1 className="header">HTMl to PDF</h1>
+        ) : (
+          ''
+        )}
         <div className="pt-5">
           <Button
             text="Start Process"

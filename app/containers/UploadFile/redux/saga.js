@@ -7,6 +7,7 @@ import showNotification from 'utils/toast';
 
 // redux
 import types from './types';
+import { reset } from './actions';
 
 function uploadAPI(data) {
   const URL = `https://${localStorage.getItem('server')}/v1/upload`;
@@ -37,6 +38,8 @@ function* upload({ data }) {
   } catch (e) {
     const { response } = e;
     response && showNotification(response.data.message, 'error');
+  } finally {
+    yield put(reset());
   }
 }
 

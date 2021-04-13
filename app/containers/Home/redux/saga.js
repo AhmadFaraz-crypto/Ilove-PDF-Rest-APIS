@@ -10,6 +10,7 @@ import showNotification from 'utils/toast';
 
 // redux
 import types from './types';
+import { reset } from './actions';
 
 function pdfjpgAPI() {
   const URL = `${config.baseURL}/start/pdfjpg`;
@@ -84,6 +85,8 @@ function* imagepdfAPIVerify() {
   } catch (e) {
     const { response } = e;
     response && showNotification(response.data.message, 'error');
+  } finally {
+    yield put(reset());
   }
 }
 

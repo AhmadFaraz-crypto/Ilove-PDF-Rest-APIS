@@ -50,16 +50,16 @@ function Home({ onPdftoJpg, onImagetoPDF, onHtmltoPDF, FunctionType}) {
         <h1 className="header">
           Every tool you need to work with PDFs in one place
         </h1>
-        <h3 className="sub-header">
+        {/* <h3 className="sub-header">
           Every tool you need to use PDFs, at your fingertips. All are 100% FREE
           and easy to use! Merge, split, compress, convert, rotate, unlock and
           watermark PDFs with just a few clicks.
-        </h3>
+        </h3> */}
         <div className="pt-5">
           <Row>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5" onClick={() => handleImagetoPdf("ImagetoPdf")}>
+                <div className="p-5 cursor" onClick={() => handleImagetoPdf("ImagetoPdf")}>
                   <h3 className="card-title">JPG to PDF</h3>
                   <p className="card-des">
                     Convert images to PDF in seconds. Easily adjust
@@ -70,7 +70,7 @@ function Home({ onPdftoJpg, onImagetoPDF, onHtmltoPDF, FunctionType}) {
             </Col>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5" onClick={() => handlePdftoJpg('PdftoJpg')}>
+                <div className="p-5 cursor" onClick={() => handlePdftoJpg('PdftoJpg')}>
                   <h3 className="card-title">PDF to JPG</h3>
                   <p className="card-des">
                     Convert each PDF page into a JPG or extract all images
@@ -81,7 +81,7 @@ function Home({ onPdftoJpg, onImagetoPDF, onHtmltoPDF, FunctionType}) {
             </Col>
             <Col lg={4}>
               <Card bgColor="primary">
-                <div className="p-5" onClick={() => handleHtmltoPdf('htmltoPdf')}>
+                <div className="p-5 cursor" onClick={() => handleHtmltoPdf('htmltoPdf')}>
                   <h3 className="card-title">HTML to PDF</h3>
                   <p className="card-des">
                     Convert webpages in HTML to PDF. Copy and paste the URL of

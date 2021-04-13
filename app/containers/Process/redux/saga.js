@@ -7,6 +7,7 @@ import showNotification from 'utils/toast';
 
 // redux
 import types from './types';
+import { reset } from './actions';
 
 function processAPI(data) {
   const URL = `https://${localStorage.getItem('server')}/v1/process`;
@@ -36,6 +37,8 @@ function* process({ data }) {
   } catch (e) {
     const { response } = e;
     response && showNotification(response.data.message, 'error');
+  } finally {
+    yield put(reset());
   }
 }
 

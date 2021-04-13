@@ -68,7 +68,7 @@ function Auth({ onSubmitForm, requesting }) {
         </form>
         <div>
           <p className="mt-3 label-text">
-            Project public key that you can find in{' '}
+            Project public key that you can find in Ilove pdf{' '}
             <a href="https://developer.ilovepdf.com/login" target="_blank">
               admin panel
             </a>

@@ -7,6 +7,7 @@ import showNotification from 'utils/toast';
 
 // redux
 import types from './types';
+import { reset } from './actions';
 
 function downloadAPI() {
   const URL = `https://${localStorage.getItem(
@@ -44,6 +45,8 @@ function* download() {
   } catch (e) {
     const { response } = e;
     response && showNotification(response.data.message, 'error');
+  } finally {
+    yield put(reset());
   }
 }
 

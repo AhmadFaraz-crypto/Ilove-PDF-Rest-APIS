@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5em;
   }
 
+  .cursor {
+    cursor: pointer;
+  }
+
   .header {
     text-align: center;
     margin-left: auto;

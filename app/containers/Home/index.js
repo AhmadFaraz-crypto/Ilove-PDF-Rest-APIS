@@ -62,7 +62,7 @@ function Home({ onPdftoJpg, onImagetoPDF, onHtmltoPDF, FunctionType}) {
                 <div className="p-5" onClick={() => handleImagetoPdf("ImagetoPdf")}>
                   <h3 className="card-title">JPG to PDF</h3>
                   <p className="card-des">
-                    Convert JPG images to PDF in seconds. Easily adjust
+                    Convert images to PDF in seconds. Easily adjust
                     orientation and margins.
                   </p>
                 </div>

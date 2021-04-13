@@ -52,11 +52,9 @@ function UploadFile({ uploadData, funcType, requesting }) {
   return (
     <Container>
       <div>
-        <h1 className="header">PDF to JPG</h1>
-        <h3 className="sub-header">
-          Convert each PDF page into a JPG or extract all images contained in a
-          PDF.
-        </h3>
+        {funcType === "PdftoJpg" ? <h1 className="header">PDF to JPG</h1> : ''}
+        {funcType === "ImagetoPdf" ? <h1 className="header">Image to PDF</h1> : ''}
+        {funcType === "htmltoPdf" ? <h1 className="header">HTMl to PDF</h1> : ''}
         <div className="pt-5">
           {funcType === 'PdftoJpg' ? (
             <div>

@@ -1,7 +1,7 @@
 <br />
 
 <div align="center"><strong>iLovePDF REST API</strong></div>
-<div align="center">A complete API Reference and PDF libraries to easily develop your own PDF processing tools to Merge, Compress, Repair ... Discover iLovePDF APIs Features.</div>
+<div align="center">iLovePDF APIs Features.</div>
 
 <br />
 
@@ -10,6 +10,8 @@
 <dl>
   <dt>PDF to JPG</dt>
   <dd>Convert each PDF page into a JPG or extract all images contained in a PDF.</dd>
+  <dt>JPG to PDF</dt>
+  <dd>Convert images to PDF in seconds. Easily adjust orientation and margins.</dd>
+  <dt>HTML to PDF</dt>
+  <dd>Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.</dd>
 </dl>
-
-But wait... there's more!

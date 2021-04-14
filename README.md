@@ -20,5 +20,14 @@ I will try to update more features.</div>
   <dd>Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.</dd>
 </dl>
 
+## Quick start
+
+1.  Make sure that you have Node.js v8.15.1 and npm v5 or above installed.
+2.  Clone this repo using `https://github.com/AhmadFaraz-crypto/Ilove-PDF-Rest-APIS`
+3.  Move to the appropriate directory: `cd Ilove-PDF-Rest-APIS`.<br />
+4.  Run `npm install` in order to install dependencies and clean the git repo.<br />
+    _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
+5.  Run `npm run clean` to delete the example app.
+
 ## Documentation
 Please see https://developer.ilovepdf.com/docs for up-to-date documentation.
